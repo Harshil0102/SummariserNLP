@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from transformers import pipeline
 
 app = Flask(__name__)
-summarizer = pipeline("summarization", model="Falconsai/text_summarization", device=-1)
+summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", device=-1, framework="pt", tokenizer="sshleifer/distilbart-cnn-12-6")
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
